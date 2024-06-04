@@ -1,5 +1,6 @@
 # Titanium
 Lightweight video downscaler powered by FFmpeg.
+
 **Supported video output and input formats:** ***.mp4 .mkv .mov .avi .wmv***
 
 
