@@ -2,6 +2,8 @@
 Lightweight video downscale program powered by FFmpeg.
 
 ![image](https://github.com/HypeCrazed/Titanium/assets/123018649/459edfa1-8b23-49f7-ae39-947b6c608351)
+![image](https://github.com/HypeCrazed/Titanium/assets/123018649/7ce73c0c-cfc5-4a67-b500-e2e4835c3182)
+
 
 **Supported video formats:** ***.mp4, .mkv, .mov, .avi, .wmv***
 
