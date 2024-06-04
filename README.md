@@ -14,3 +14,4 @@ You can downscale all the way to 800p 10fps, although support for even lower res
 What are you waiting for? Stop using those sketchy downscale websites and download Titanium.
 
 ***If you encounter any errors, make sure you have the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.204-windows-x64-installer) installed!***
+***If you're building from the source, make sure to put the FFmpeg files in the same folder as Titanium.exe***
