@@ -1,7 +1,7 @@
 # Titanium
 Lightweight video downscaler powered by FFmpeg.
 
-**Supported video output and input formats:** ***.mp4 .mkv .mov .avi .wmv***
+**Supported video formats:** ***.mp4 .mkv .mov .avi .wmv***
 
 
 Using Titanium, you can cut your video size by more than half the original, great for services with file size limits like Discord.
