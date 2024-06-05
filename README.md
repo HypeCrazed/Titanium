@@ -3,7 +3,7 @@ Lightweight video downscaler powered by FFmpeg.
 
 **Supported video formats:** ***.mp4 .mkv .mov .avi .wmv***
 
-**Features in development:** ***Support for 360p, ability to change downscale filter, UI improvement / tweaks.***
+**Features in development:** ***Support for 360p, better save system, UI improvement / tweaks.***
 
 Using Titanium, you can cut your video size by more than half the original, great for services with file size limits like Discord.
 
