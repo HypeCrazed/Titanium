@@ -31,10 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(titanium_app));
             tabControl1 = new TabControl();
             convertTab = new TabPage();
-            pictureBox1 = new PictureBox();
-            button2 = new Button();
+            button3 = new Button();
+            label9 = new Label();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
             settingsTab = new TabPage();
+            currentPathLabel = new Label();
             browsePathButton = new Button();
             label8 = new Label();
             label4 = new Label();
@@ -46,6 +48,8 @@
             formatBox = new ComboBox();
             saveButton = new Button();
             creditsPage = new TabPage();
+            panel1 = new Panel();
+            label10 = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -74,9 +78,10 @@
             // convertTab
             // 
             convertTab.BackColor = Color.FromArgb(55, 55, 55);
-            convertTab.Controls.Add(pictureBox1);
-            convertTab.Controls.Add(button2);
+            convertTab.Controls.Add(button3);
+            convertTab.Controls.Add(label9);
             convertTab.Controls.Add(button1);
+            convertTab.Controls.Add(pictureBox1);
             convertTab.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             convertTab.Location = new Point(4, 29);
             convertTab.Name = "convertTab";
@@ -87,30 +92,33 @@
             convertTab.Text = "Convert";
             convertTab.Click += convertTab_Click;
             // 
-            // pictureBox1
+            // button3
             // 
-            pictureBox1.Image = Properties.Resources.titanium;
-            pictureBox1.Location = new Point(176, 43);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(147, 130);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            button3.BackColor = Color.Transparent;
+            button3.BackgroundImage = Properties.Resources.OIP;
+            button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(13, 239);
+            button3.Name = "button3";
+            button3.Size = new Size(31, 29);
+            button3.TabIndex = 5;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
             // 
-            // button2
+            // label9
             // 
-            button2.BackColor = Color.FromArgb(30, 30, 30);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(251, 192);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 42);
-            button2.TabIndex = 1;
-            button2.Text = "Browse";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(107, 132);
+            label9.Name = "label9";
+            label9.Size = new Size(278, 25);
+            label9.TabIndex = 4;
+            label9.Text = "Open Source Video Downscaler";
+            label9.Click += label9_Click_1;
             // 
             // button1
             // 
@@ -119,17 +127,29 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(110, 192);
+            button1.Location = new Point(109, 176);
             button1.Name = "button1";
-            button1.Size = new Size(135, 42);
+            button1.Size = new Size(276, 42);
             button1.TabIndex = 0;
-            button1.Text = "Convert";
+            button1.Text = "Choose a video to downscale";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-35, -121);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(571, 421);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // settingsTab
             // 
             settingsTab.BackColor = Color.FromArgb(55, 55, 55);
+            settingsTab.Controls.Add(currentPathLabel);
             settingsTab.Controls.Add(browsePathButton);
             settingsTab.Controls.Add(label8);
             settingsTab.Controls.Add(label4);
@@ -147,6 +167,17 @@
             settingsTab.TabIndex = 1;
             settingsTab.Text = "Settings";
             settingsTab.Click += settingsTab_Click;
+            // 
+            // currentPathLabel
+            // 
+            currentPathLabel.AutoSize = true;
+            currentPathLabel.ForeColor = Color.White;
+            currentPathLabel.Location = new Point(13, 214);
+            currentPathLabel.Name = "currentPathLabel";
+            currentPathLabel.Size = new Size(116, 15);
+            currentPathLabel.TabIndex = 11;
+            currentPathLabel.Text = "Current output path:";
+            currentPathLabel.Click += label11_Click;
             // 
             // browsePathButton
             // 
@@ -186,7 +217,7 @@
             // qualityBox
             // 
             qualityBox.FormattingEnabled = true;
-            qualityBox.Items.AddRange(new object[] { "1920x1080", "1280x720", "800x800" });
+            qualityBox.Items.AddRange(new object[] { "1920x1080", "1280x720", "800x800", "720×480", "480x360" });
             qualityBox.Location = new Point(67, 138);
             qualityBox.Name = "qualityBox";
             qualityBox.Size = new Size(80, 23);
@@ -252,9 +283,9 @@
             saveButton.FlatStyle = FlatStyle.Flat;
             saveButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             saveButton.ForeColor = Color.White;
-            saveButton.Location = new Point(175, 232);
+            saveButton.Location = new Point(13, 240);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(148, 36);
+            saveButton.Size = new Size(197, 28);
             saveButton.TabIndex = 1;
             saveButton.Text = "Save";
             saveButton.UseVisualStyleBackColor = false;
@@ -263,6 +294,8 @@
             // creditsPage
             // 
             creditsPage.BackColor = Color.FromArgb(55, 55, 55);
+            creditsPage.Controls.Add(panel1);
+            creditsPage.Controls.Add(label10);
             creditsPage.Controls.Add(label7);
             creditsPage.Controls.Add(label6);
             creditsPage.Controls.Add(label5);
@@ -271,12 +304,33 @@
             creditsPage.Size = new Size(501, 296);
             creditsPage.TabIndex = 2;
             creditsPage.Text = "Credits";
+            creditsPage.Click += creditsPage_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Location = new Point(13, 126);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(471, 3);
+            panel1.TabIndex = 8;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(60, 146);
+            label10.Name = "label10";
+            label10.Size = new Size(371, 45);
+            label10.TabIndex = 7;
+            label10.Text = "Titanium is free and always will be, if you want to support this project\r\nby making pull requests, you could have your name on this cool little\r\ncredits page :D";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(13, 98);
+            label7.Location = new Point(13, 89);
             label7.Name = "label7";
             label7.Size = new Size(120, 15);
             label7.TabIndex = 6;
@@ -286,7 +340,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(13, 73);
+            label6.Location = new Point(13, 64);
             label6.Name = "label6";
             label6.Size = new Size(124, 15);
             label6.TabIndex = 5;
@@ -307,7 +361,7 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Form1
+            // titanium_app
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -316,11 +370,12 @@
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
-            Text = "Titanium v1.0";
+            Name = "titanium_app";
+            Text = "Titanium v1.1";
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             convertTab.ResumeLayout(false);
+            convertTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             settingsTab.ResumeLayout(false);
             settingsTab.PerformLayout();
@@ -336,7 +391,6 @@
         private TabPage settingsTab;
         private Button button1;
         private PictureBox pictureBox1;
-        private Button button2;
         private ComboBox formatBox;
         private Button saveButton;
         private Label label2;
@@ -353,5 +407,10 @@
         private FolderBrowserDialog folderBrowserDialog1;
         private Button browsePathButton;
         private Label label8;
+        private Label label9;
+        private Panel panel1;
+        private Label label10;
+        private Button button3;
+        private Label currentPathLabel;
     }
 }
