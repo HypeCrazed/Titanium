@@ -3,7 +3,7 @@ Lightweight video downscaler powered by FFmpeg.
 
 **Supported video formats:** ***.mp4 .mkv .mov .avi .wmv***
 
-**Features in development:** ***Support for 360p, better save system, UI improvement / tweaks.***
+**Features in development:** ***TBD***
 
 #### If your antivirus is flagging Titanium as a virus, you can simply exclude Titanium.exe and Titanium.dll, or turn it off while using Titanium.
 
