@@ -7,7 +7,7 @@ Lightweight video downscaler powered by FFmpeg.
 
 #### If your antivirus is flagging Titanium as a virus, you can simply exclude Titanium.exe and Titanium.dll, or turn it off while using Titanium.
 
-***Titanium requires [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.204-windows-x64-installer) to be installed.
+Titanium requires [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.204-windows-x64-installer) to be installed.
 
 Using Titanium, you can cut your video size by more than half the original, great for services with file size limits like Discord.
 
