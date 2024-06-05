@@ -11,8 +11,8 @@ Titanium requires the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dot
 
 Using Titanium, you can cut your video size by more than half the original, great for services with file size limits like Discord.
 
-![image](https://github.com/HypeCrazed/Titanium/assets/123018649/459edfa1-8b23-49f7-ae39-947b6c608351)
-![image](https://github.com/HypeCrazed/Titanium/assets/123018649/7ce73c0c-cfc5-4a67-b500-e2e4835c3182)
+![image](https://github.com/HypeCrazed/Titanium/assets/123018649/e1893530-0cf3-430f-aca3-5b79035af731)
+![image](https://github.com/HypeCrazed/Titanium/assets/123018649/5bfa2a21-bcf2-4431-8ca0-e8c6a1ea5612)
 
 You can downscale all the way to 800p 10fps!
 
