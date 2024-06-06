@@ -14,7 +14,7 @@ Using Titanium, you can cut your video size by more than half the original, grea
 ![image](https://github.com/HypeCrazed/Titanium/assets/123018649/e1893530-0cf3-430f-aca3-5b79035af731)
 ![image](https://github.com/HypeCrazed/Titanium/assets/123018649/5bfa2a21-bcf2-4431-8ca0-e8c6a1ea5612)
 
-You can downscale all the way to 480p 10fps!
+You can downscale all the way to 360p 10fps!
 
 What are you waiting for? Stop using those sketchy downscale websites and download Titanium.
 
