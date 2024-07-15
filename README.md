@@ -5,7 +5,7 @@ Lightweight video downscaler powered by FFmpeg.
 
 **Todo list:** ***New app icon, settings for Titanium (not the downscale settings), UI tweaks, auto-updater***
 
-#### If your antivirus is flagging Titanium as a virus, you can simply exclude Titanium.exe and Titanium.dll, or turn it off while using Titanium.
+#### If your antivirus is flagging Titanium as a virus, you can simply turn it off while using it.
 
 Titanium requires the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.204-windows-x64-installer) to be installed.
 
