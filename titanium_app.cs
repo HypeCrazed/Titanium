@@ -2,28 +2,55 @@ using System;
 using System.Diagnostics;
 using System.Linq.Expressions;
 
+
 namespace Titanium
 {
     public partial class titanium_app : Form
     {
         public titanium_app()
         {
-            
+
             InitializeComponent();
             formatBox.SelectedItem = File.ReadAllText("format.txt");
             frameBox.SelectedItem = File.ReadAllText("framerate.txt");
             qualityBox.SelectedItem = File.ReadAllText("quality.txt");
 
+
+            string TopMostSetting = File.ReadAllText("topmost.txt").Trim();
+
+            if (TopMostSetting.Equals("true"))
+            {
+                topMostCheckbox.Checked = true;
+            }
+            else
+            {
+                topMostCheckbox.Checked = false;
+            }
+
+
+            string autoCloseSetting = File.ReadAllText("autoclose.txt").Trim();
+
+            if (autoCloseSetting.Equals("true"))
+            {
+                closeCheckBox.Checked = true;
+            }
+            else
+            {
+                closeCheckBox.Checked = false;
+            }
+
+
+
             string outputPath = File.ReadAllText("output_path.txt").Trim();
 
-            currentPathLabel.Text = $"Current output path: {outputPath}";
+            currentPathLabel.Text = $"Path: {outputPath}";
 
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,6 +78,12 @@ namespace Titanium
                 string convert = $"/c ffmpeg -i \"{videoPath}\" -vf scale={qualityTXT} -r {framerateTXT} -c:v libx264 -crf 18 \"{outputPath}\\titanium_output.{formatTXT}\"";
 
                 Process.Start("cmd.exe", convert);
+
+                if (closeCheckBox.Checked)
+                {
+                    this.Close();
+                }
+
             }
             else
             {
@@ -58,9 +91,6 @@ namespace Titanium
                 button4_Click(sender, e);
             }
 
-
-
-                                   
         }
 
         private void convertTab_Click(object sender, EventArgs e)
@@ -82,7 +112,7 @@ namespace Titanium
 
             MessageBox.Show($"Your videos will now save to {outputPath}", "Output path saved!");
 
-            currentPathLabel.Text = $"Current output path: {outputPath}";
+            currentPathLabel.Text = $"Path: {outputPath}";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -145,7 +175,54 @@ namespace Titanium
 
         private void label11_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void splashCooldown_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (topMostCheckbox.Checked)
+            {
+                File.WriteAllText("topmost.txt", "true");
+                this.TopMost = true;
+            }
+            else
+            {
+                File.WriteAllText("topmost.txt", "nope");
+                this.TopMost = false;
+            }
+        }
+
+        private void closeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (closeCheckBox.Checked)
+            {
+                File.WriteAllText("autoclose.txt", "true");
+            }
+            else
+            {
+                File.WriteAllText("autoclose.txt", "nope");
+            }
         }
     }
 }

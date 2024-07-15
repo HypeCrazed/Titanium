@@ -32,10 +32,14 @@
             tabControl1 = new TabControl();
             convertTab = new TabPage();
             button3 = new Button();
-            label9 = new Label();
+            splash = new Label();
             button1 = new Button();
             pictureBox1 = new PictureBox();
             settingsTab = new TabPage();
+            closeCheckBox = new CheckBox();
+            topMostCheckbox = new CheckBox();
+            label9 = new Label();
+            panel2 = new Panel();
             currentPathLabel = new Label();
             browsePathButton = new Button();
             label8 = new Label();
@@ -79,7 +83,7 @@
             // 
             convertTab.BackColor = Color.FromArgb(55, 55, 55);
             convertTab.Controls.Add(button3);
-            convertTab.Controls.Add(label9);
+            convertTab.Controls.Add(splash);
             convertTab.Controls.Add(button1);
             convertTab.Controls.Add(pictureBox1);
             convertTab.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -108,17 +112,17 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click_1;
             // 
-            // label9
+            // splash
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(107, 132);
-            label9.Name = "label9";
-            label9.Size = new Size(278, 25);
-            label9.TabIndex = 4;
-            label9.Text = "Open Source Video Downscaler";
-            label9.Click += label9_Click_1;
+            splash.AutoSize = true;
+            splash.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            splash.ForeColor = Color.White;
+            splash.Location = new Point(107, 132);
+            splash.Name = "splash";
+            splash.Size = new Size(278, 25);
+            splash.TabIndex = 4;
+            splash.Text = "Open Source Video Downscaler";
+            splash.Click += label9_Click_1;
             // 
             // button1
             // 
@@ -131,7 +135,7 @@
             button1.Name = "button1";
             button1.Size = new Size(276, 42);
             button1.TabIndex = 0;
-            button1.Text = "Choose a video to downscale";
+            button1.Text = "Select Video";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -149,6 +153,10 @@
             // settingsTab
             // 
             settingsTab.BackColor = Color.FromArgb(55, 55, 55);
+            settingsTab.Controls.Add(closeCheckBox);
+            settingsTab.Controls.Add(topMostCheckbox);
+            settingsTab.Controls.Add(label9);
+            settingsTab.Controls.Add(panel2);
             settingsTab.Controls.Add(currentPathLabel);
             settingsTab.Controls.Add(browsePathButton);
             settingsTab.Controls.Add(label8);
@@ -168,15 +176,60 @@
             settingsTab.Text = "Settings";
             settingsTab.Click += settingsTab_Click;
             // 
+            // closeCheckBox
+            // 
+            closeCheckBox.AutoSize = true;
+            closeCheckBox.ForeColor = Color.White;
+            closeCheckBox.Location = new Point(263, 94);
+            closeCheckBox.Name = "closeCheckBox";
+            closeCheckBox.Size = new Size(141, 19);
+            closeCheckBox.TabIndex = 16;
+            closeCheckBox.Text = "Close after downscale";
+            closeCheckBox.UseVisualStyleBackColor = true;
+            closeCheckBox.CheckedChanged += closeCheckBox_CheckedChanged;
+            // 
+            // topMostCheckbox
+            // 
+            topMostCheckbox.AutoSize = true;
+            topMostCheckbox.ForeColor = Color.White;
+            topMostCheckbox.Location = new Point(263, 69);
+            topMostCheckbox.Name = "topMostCheckbox";
+            topMostCheckbox.Size = new Size(72, 19);
+            topMostCheckbox.TabIndex = 15;
+            topMostCheckbox.Text = "TopMost";
+            topMostCheckbox.UseVisualStyleBackColor = true;
+            topMostCheckbox.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(314, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(118, 25);
+            label9.TabIndex = 13;
+            label9.Text = "App Settings";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Location = new Point(248, 10);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(3, 260);
+            panel2.TabIndex = 12;
+            panel2.Paint += panel2_Paint;
+            // 
             // currentPathLabel
             // 
             currentPathLabel.AutoSize = true;
             currentPathLabel.ForeColor = Color.White;
             currentPathLabel.Location = new Point(13, 214);
             currentPathLabel.Name = "currentPathLabel";
-            currentPathLabel.Size = new Size(116, 15);
+            currentPathLabel.Size = new Size(34, 15);
             currentPathLabel.TabIndex = 11;
-            currentPathLabel.Text = "Current output path:";
+            currentPathLabel.Text = "Path:";
+            currentPathLabel.TextAlign = ContentAlignment.MiddleCenter;
             currentPathLabel.Click += label11_Click;
             // 
             // browsePathButton
@@ -217,7 +270,7 @@
             // qualityBox
             // 
             qualityBox.FormattingEnabled = true;
-            qualityBox.Items.AddRange(new object[] { "1920x1080", "1280x720", "800x800", "720×480", "480x360" });
+            qualityBox.Items.AddRange(new object[] { "1920x1080", "1280x720", "800x800", "480x360" });
             qualityBox.Location = new Point(67, 138);
             qualityBox.Name = "qualityBox";
             qualityBox.Size = new Size(80, 23);
@@ -259,11 +312,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(13, 21);
+            label1.Location = new Point(27, 19);
             label1.Name = "label1";
             label1.Size = new Size(197, 25);
             label1.TabIndex = 3;
             label1.Text = "Video Output Settings";
+            label1.Click += label1_Click;
             // 
             // formatBox
             // 
@@ -319,11 +373,11 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(60, 146);
+            label10.Location = new Point(43, 146);
             label10.Name = "label10";
-            label10.Size = new Size(371, 45);
+            label10.Size = new Size(389, 90);
             label10.TabIndex = 7;
-            label10.Text = "Titanium is free and always will be, if you want to support this project\r\nby making pull requests, you could have your name on this cool little\r\ncredits page :D";
+            label10.Text = "Help keep Titanium in development by making pull requests! Titanium is\r\ndeveloped by one person, so any support is appreciated.\r\n\r\nThanks for reading this swag,\r\n\r\n-HypeCrazed";
             label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -371,7 +425,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "titanium_app";
-            Text = "Titanium v1.1";
+            Text = "Titanium v1.2";
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             convertTab.ResumeLayout(false);
@@ -407,10 +461,14 @@
         private FolderBrowserDialog folderBrowserDialog1;
         private Button browsePathButton;
         private Label label8;
-        private Label label9;
+        private Label splash;
         private Panel panel1;
         private Label label10;
         private Button button3;
         private Label currentPathLabel;
+        private Panel panel2;
+        private Label label9;
+        private CheckBox topMostCheckbox;
+        private CheckBox closeCheckBox;
     }
 }
