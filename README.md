@@ -3,7 +3,7 @@ Lightweight video downscaler powered by FFmpeg.
 
 **Supported video formats:** ***.mp4 .mkv .mov .avi .wmv***
 
-**Todo list:** ***New app icon, settings for Titanium (not the downscale settings), UI tweaks, auto-updater***
+**Todo list:** ***auto-updater***
 
 #### If your antivirus is flagging Titanium as a virus, you can simply turn it off while using it.
 
