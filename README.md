@@ -18,3 +18,5 @@ What are you waiting for? Stop using those sketchy downscale websites and downlo
 [![discord_join](https://github.com/user-attachments/assets/93287203-4fb0-4c02-a5c9-60fe9646f4d0)](https://discord.gg/XEtu25jqnF)
 
 ***If you're building from the source, make sure to put the [FFmpeg](https://ffmpeg.org/) files in the same folder as Titanium.exe***
+
+***Titanium does NOT work with Wine!***
