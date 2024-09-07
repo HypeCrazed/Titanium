@@ -18,6 +18,6 @@ What are you waiting for? Stop using those sketchy downscale websites and downlo
 **Are you on an Apple device? Click [here](https://github.com/hypecrazed/titanium-ios)**
 
 
-***If you're building from the source, make sure to put the [FFmpeg](https://ffmpeg.org/) files in the same folder as Titanium.exe***
+**If you're building from the source, make sure to put the [FFmpeg](https://ffmpeg.org/) files in the same folder as Titanium.exe**
 
-***Titanium does NOT work with Wine!***
+**Titanium does NOT work with Wine!**
