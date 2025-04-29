@@ -1,3 +1,5 @@
+// a lot of this awful, plan to rewrite soon
+
 using System;
 using System.Diagnostics;
 using System.Linq.Expressions;
