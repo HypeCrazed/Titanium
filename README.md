@@ -1,5 +1,5 @@
 # Titanium
-# THIS PROJECT WILL NO LONGER RECEIVE ANY UPDATES, BUT IS FULLY FUNCTIONAL AND STABLE! (FEEL FREE TO FORK)
+## THIS PROJECT WILL NO LONGER RECEIVE ANY UPDATES, BUT IS FULLY FUNCTIONAL AND STABLE! (FEEL FREE TO FORK)
 Lightweight video downscaler powered by FFmpeg.
 
 **Supported video formats:** ***.mp4 .mkv .mov .avi .wmv***
