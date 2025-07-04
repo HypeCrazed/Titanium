@@ -1,4 +1,4 @@
-// a lot of this awful, plan to rewrite soon
+// since I have stopped updating this project, I am leaving some notes on things that may be helpful if you're building off my code.
 
 using System;
 using System.Diagnostics;
@@ -32,7 +32,7 @@ namespace Titanium
 
             string autoCloseSetting = File.ReadAllText("autoclose.txt").Trim();
 
-            if (autoCloseSetting.Equals("true"))
+            if (autoCloseSetting.Equals("true")) // this just pretty much closes the application once ffmpeg starts working
             {
                 closeCheckBox.Checked = true;
             }
@@ -45,14 +45,14 @@ namespace Titanium
 
             string outputPath = File.ReadAllText("output_path.txt").Trim();
 
-            currentPathLabel.Text = $"Path: {outputPath}";
+            currentPathLabel.Text = $"Path: {outputPath}"; // just displays the output path the user selected w/ a label
 
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // this doesn't do anything you can delete this if you want
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,9 +71,9 @@ namespace Titanium
 
 
                 string videoPath = openFileDialog1.FileName;
-
+                // I'm very aware this is a messy way of reading user settings, but it works in this case and is functional.
                 string outputPath = File.ReadAllText("output_path.txt").Trim();
-                string formatTXT = File.ReadAllText("format.txt").Trim();
+                string formatTXT = File.ReadAllText("format.txt").Trim(); 
                 string framerateTXT = File.ReadAllText("framerate.txt").Trim();
                 string qualityTXT = File.ReadAllText("quality.txt").Trim();
 
@@ -120,13 +120,12 @@ namespace Titanium
         private void button3_Click(object sender, EventArgs e)
         {
 
-
             string formatSave = formatBox.Text;
             string frameSave = frameBox.Text;
             string qualitySave = qualityBox.Text;
 
             File.WriteAllText("format.txt", formatBox.Text);
-            File.WriteAllText("framerate.txt", frameBox.Text);
+            File.WriteAllText("framerate.txt", frameBox.Text); // same thing here, very messy way of saving user settings.
             File.WriteAllText("quality.txt", qualityBox.Text);
 
             MessageBox.Show("Your settings have been saved.", "Settings saved!");
